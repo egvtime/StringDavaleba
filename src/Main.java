@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         //pirveli davaleba
+
         String string = "String";
         System.out.println("String length: " + string.length());
 
@@ -20,24 +21,20 @@ public class Main {
 
         System.out.println("sentence amount: " + sentanceamount);
 
-
         //mesame davaleba
 
         String normalString = "civic";
         char[] Characters = normalString.toCharArray();
-        String reversedString = new String();
+        StringBuilder reversedString = new StringBuilder(new String());
         boolean ispalindrome = false;
 
         for(int i = normalString.length()-1; i >= 0; i--){
-            reversedString += (Character.toString(Characters[i]));
+            reversedString.append(Character.toString(Characters[i]));
         }
 
-        if(reversedString.equals(normalString))ispalindrome = true;
-
-        System.out.println(reversedString);
+        if(reversedString.toString().equals(normalString))ispalindrome = true;
 
         System.out.println("is palindrome: " + ispalindrome);
-
 
         //meotxe davaleba
 
@@ -69,7 +66,7 @@ public class Main {
 
         String NitasString = "AABBCCEEF";
         char lastChar = 'a';
-        String FinalResult = "";
+        StringBuilder FinalResult = new StringBuilder();
 
         for(int i = 0; i < NitasString.length(); i++){
             if(i == 0) {
@@ -78,7 +75,7 @@ public class Main {
             }
 
             if(NitasString.toCharArray()[i] == lastChar){
-                FinalResult  += Character.toString(lastChar);
+                FinalResult.append(Character.toString(lastChar));
             }else{
                 lastChar = (NitasString.toCharArray())[i];
             }
